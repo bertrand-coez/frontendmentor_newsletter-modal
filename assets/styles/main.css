@@ -1,0 +1,276 @@
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto-Regular.ttf");
+    font-weight: normal;
+}
+@font-face {
+    font-family: "roboto";
+    src: url("../fonts/Roboto-Bold.ttf");
+    font-weight: bold;
+}
+
+
+:root {
+    font-size: 16px;
+    --dark-slate-grey: hsl(234, 29%, 20%);
+    --charcoal-grey: hsl(235, 18%, 26%);
+    --grey: hsl(231, 7%, 60%);
+    --white: hsl(0, 0%, 100%);
+    --tomato: #ff6257;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "roboto", sans-serif;
+}
+
+body {
+    background-color: var(--charcoal-grey);
+    color: var(--dark-slate-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 3.4rem;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+p {
+    margin: 2rem 0;
+}
+
+ul {
+    margin: 2rem 0;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-items: center; */
+    margin: 1rem 0;
+    gap: 1rem;
+}
+
+li .list-text {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1rem;
+    text-align: start;
+}
+
+div.list-icon {
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+    background: transparent url("../images/icon-list.svg") no-repeat;
+    background-size: contain;
+    margin-right: 1rem;
+}
+
+.big {
+    width: 4rem;
+    height: 4rem;
+}
+
+.card {
+    background-color: var(--white);
+    margin: auto;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    padding: 1.5rem;
+    min-width: 100px;
+}
+
+.signup-form--container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+aside {
+    padding: 1.5rem;
+    /* background-color: #f8cece; */
+    width: 420px;
+}
+
+#signup-form {
+    width: 100%;
+}
+
+
+@keyframes shake {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-5px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(5px);
+	}
+
+	80% {
+		transform: translateX(4px);
+	}
+
+	90% {
+		transform: translateX(-4px);
+	}
+}
+
+.shake {
+    animation: shake 0.5s ease 0s 1 normal forwards;
+
+}
+
+
+.input-heading {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+label, .input-error-text {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+input {
+    display: block;
+    height: 3rem;
+    width: 100%;
+    border-radius: 6px;
+    margin: 0.5rem 0px 1rem 0;
+}
+
+.input-error-text {
+    display: none;
+    color: var(--tomato);
+}
+
+
+
+#email{
+    border: 1px solid var(--grey);
+    padding-left: 1.5rem;
+    color: var(--grey);
+}
+
+#email.input-error {
+    color: var(--tomato);
+    background-color: #ffd3d0;
+    border-color: var(--tomato);
+}
+
+#email:focus,
+#email:hover {
+    border: 1px solid var(--dark-slate-grey);
+    outline: none;
+    color: var(--dark-slate-grey);
+    /* cursor: pointer; */
+}
+
+.button{
+    border: 1px solid transparent;
+    background-color: var(--dark-slate-grey);
+    color: var(--white);
+    font-weight: bold;
+    text-align: center;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, rgb(255, 21, 99) 0%, var(--tomato) 100%);
+    box-shadow: 5px 5px 30px 0px #FF6257;
+    cursor: pointer;
+}
+
+.illustration {
+    display: inline-block;
+    background: #fff url("../images/illustration-sign-up-desktop.svg") no-repeat ;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 400px;
+    border-radius: 1.1rem;
+}
+
+.thanks {
+    display: none;
+    flex-direction: column;
+    width: 450px;
+    padding: 2rem 4rem;
+}
+
+span.specified-email {
+    font-weight: bold;
+}
+@media screen and (max-width: 400px){
+    :root {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 375px){
+    .signup-form--container {
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+        width: 100vw;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .illustration {
+        background: #fff url("../images/illustration-sign-up-mobile.svg") no-repeat ;
+        height: 284px;
+        width: 100vw;
+        /* background: red; */
+        border-radius: 0 0 1.5rem 1.5rem;
+        overflow: hidden;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .signup-form--container aside {
+        padding: 0 24px;
+        margin: 1.5rem;
+        width: auto;
+    }
+
+    li {
+        align-items: start;
+        margin: 1.5rem 0;
+    }
+
+    .card {
+        border-radius: 0;
+        height: 100vh;
+    }
+
+    .thanks {
+        justify-content: space-between;
+        padding-top: 10rem;
+    }
+}
